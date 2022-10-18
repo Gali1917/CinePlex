@@ -32,6 +32,14 @@ const peliculaSchema = mongoose.Schema({
     imagen: {
         type: String,
         required: true
+    },
+    trailer: {
+        type: String,
+        required: true
+    },
+    sinopsis: {
+        type: String,
+        required: true
     }
 });
 

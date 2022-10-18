@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import "./styles/inventario.css";
+import "../../styles/inventario.css";
 
 const InventarioPage = () => {
   const [peliculas, setPeliculas] = useState([]);

@@ -1,0 +1,17 @@
+main{
+    text-align: center;
+}
+main h1{
+    margin: 8px;
+}
+.peliculas-card{
+    margin: 0 auto;
+    margin-top: 48px;
+    width: 220px;
+    background-color: red;
+    border-radius: 4px;
+    box-shadow: 4px 4px 10px 4px black ;
+}
+.peliculas-card img{
+    width: 100%;
+}
