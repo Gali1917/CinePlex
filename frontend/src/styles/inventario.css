@@ -12,12 +12,19 @@ html{
 }
 body{
     font-size: 1.6rem;
+    position: relative;
+}
+main{
+    padding-bottom: 100px;
 }
 .inventario-tabla{
-    width: 100%;
+    overflow: auto;
+
 }
+
 table{
     background-color: rgb(128, 141, 239);
+    margin-bottom: 40px;
 }
 table th{
     text-align: center;
@@ -25,7 +32,6 @@ table th{
 
 }
 table tr{
-    border-bottom: 1px solid rgba(0, 0, 0, 0.377);
     background-color: rgba(0, 0, 0, 0.044);
 
 }
@@ -40,4 +46,11 @@ table tr{
 }
 .iconos img{
     width: 50px;
+}
+main button{
+    position: sticky;
+    bottom: 24px;
+    left: 0;
+    right: 0;
+    margin: auto;
 }

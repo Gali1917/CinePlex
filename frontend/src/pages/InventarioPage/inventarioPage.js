@@ -17,7 +17,6 @@ const InventarioPage = () => {
       <article className="inventario-tabla">
         <table>
           <tr>
-            <th>ID</th>
             <th>nombre</th>
             <th>Tarifa</th>
             <th>Hora de Inicio</th>
@@ -31,7 +30,6 @@ const InventarioPage = () => {
           {peliculas.map((eachPeliculas) => {
             return (
               <tr>
-                <td>{eachPeliculas._id}</td>
                 <td>{eachPeliculas.nombre}</td>
                 <td>{eachPeliculas.tarifa}</td>
                 <td>{eachPeliculas.hora_inicio}</td>
@@ -57,7 +55,9 @@ const InventarioPage = () => {
           })}
         </table>
       </article>
-      <Link to="/">Volver</Link>
+      <Link className="link" to="/">
+        <button>Volver</button>
+      </Link>
     </main>
   );
 };

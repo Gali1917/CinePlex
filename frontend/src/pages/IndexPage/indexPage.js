@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import("../../styles/index.css");
+import ("../../styles/index.css");
 const IndexPage = () => {
   const [peliculas, setPeliculas] = useState([]);
   const listarPeliculas = () => {

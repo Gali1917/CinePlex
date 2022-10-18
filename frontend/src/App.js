@@ -3,6 +3,7 @@ import IndexPage from "./pages/IndexPage/indexPage";
 import InventarioPage from "./pages/InventarioPage/inventarioPage";
 import PeliculaDetalle from "./pages/PeliculaDetalle/peliculaDetalle";
 import { Routes, Route, Link } from "react-router-dom";
+import LoginPage from "./pages/LoginPage/loginPage";
 
 function App() {
   return (
@@ -23,21 +24,30 @@ function App() {
           <Route path="/" element={<IndexPage />} />
           <Route path="/inventario" element={<InventarioPage />} />
           <Route path="/detalles" element={<PeliculaDetalle />} />
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </main>
       <footer>
         <div className="footer-titulo">
           <h3>CinePlex Cinema</h3>
-          <p>Calle False # 123 esquina</p>
+          <p>Calle Falsa # 123 esquina</p>
         </div>
         <div className="footer-body">
           <div className="footer-texto">
             <ul>
-              <li>Inicio</li>
-              <li>Nosotros</li>
-              <li>Contactanos</li>
               <li>
-                <Link className="link" to="/inventario">Administrar</Link>
+                <Link className="link" to="/">Inicio</Link>
+              </li>
+              <li>
+                <Link className="link" to="/">Nosotros</Link>
+              </li>
+              <li>
+                <Link className="link" to="/">Contactanos</Link>
+              </li>
+              <li>
+                <Link className="link" to="/login">
+                  Administrar
+                </Link>
               </li>
             </ul>
           </div>
