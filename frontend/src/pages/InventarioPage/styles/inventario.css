@@ -1,0 +1,43 @@
+:root{
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    font-family: sans-serif;
+}
+body{
+    font-size: 1.6rem;
+}
+.inventario-tabla{
+    width: 100%;
+}
+table{
+    background-color: rgb(128, 141, 239);
+}
+table th{
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.377);
+
+}
+table tr{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.377);
+    background-color: rgba(0, 0, 0, 0.044);
+
+}
+.imagen-pelicula{
+    width: 100px;
+}
+.iconos{
+    display: grid;
+    grid-template-rows:1fr 1fr;
+    justify-content: space-evenly;
+    gap: 12px;
+}
+.iconos img{
+    width: 50px;
+}

@@ -1,0 +1,48 @@
+const express = require('express');
+const mongoose = require('mongoose');
+const peliculasRoutes = require('./routes/peliculaRoute');
+//Variable de ambiente modificadas
+require('dotenv').config();
+
+
+const app = express();
+
+//Configuracion del CORS
+const cors = require('cors');
+app.use(cors());
+
+//Definicion del puerto
+const port = process.env.PORT || 5005;
+
+//Middleware (antepone el /api a la ruta)
+app.use(express.json());
+app.use('/api', peliculasRoutes);
+
+
+
+
+// const whiteList = 'http://localhost:3000';
+// app.use(cors({
+//     origin: whiteList
+// }));
+
+//Mensaje de servidor funcionando en el navegador
+app.get('/', (req, res) =>{
+    res.send("Servidor funcionando.")
+});
+
+//Creacion de conexion a MongoDB Atlas
+mongoose.connect(process.env.MONGODB_URI)
+    .then(() =>{
+        console.log("Base de datos Atlas conectada.") 
+    })
+    .catch((error) =>{
+        console.error(error)
+    });
+
+//Escucha de servidor
+app.listen(port, () =>{
+    console.log("Servidor iniciado desde el puerto", port)
+});
+
+
