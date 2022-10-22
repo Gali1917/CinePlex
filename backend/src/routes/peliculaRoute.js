@@ -7,17 +7,43 @@ const peliculaSchema = require('../models/peliculaModel');
 const router = express.Router();
 
 //Crear Pelicula
-router.post('/peliculas', (req, res) =>{
-    const pelicula = peliculaSchema(req.body);
-    pelicula
-    .save()
-    .then((data) =>{
-        res.json(data)
+// router.post('/peliculas/nueva_pelicula', (req, res) =>{
+//     const pelicula = peliculaSchema(req.body);
+//     pelicula
+//     .save()
+//     .then((data) =>{
+//         res.json(data)
+//     })
+//     .catch((error) =>{
+//         res.json({message: error})
+//     });
+// });
+
+//Crear
+router.post('/peliculas/nueva_pelicula', (req, res) =>{
+    const nuevaPelicula = peliculaSchema({
+        // id: uniquid(),
+        nombre: req.body.nombre,
+        tarifa: req.body.tarifa,
+        hora_inicio: req.body.hora_inicio,
+        idioma: req.body.idioma,
+        tipo: req.body.tipo,
+        categoria: req.body.categoria,
+        restriccion: req.body.restriccion,
+        imagen: req.body.imagen,
+        trailer: req.body.trailer,
+        sinopsis: req.body.sinopsis
     })
-    .catch((error) =>{
-        res.json({message: error})
-    });
-});
+    nuevaPelicula.save(function(err){
+        if(!err){
+            res.send('Pelicula agregada correctamente')
+        }
+        else{
+            res.send(err)
+        }
+        })
+    })
+
 
 //Listar Peliculas
 router.get('/peliculas', (req, res) =>{

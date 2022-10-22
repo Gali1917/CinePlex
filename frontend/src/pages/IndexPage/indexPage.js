@@ -9,13 +9,14 @@ const IndexPage = () => {
       .then((data) => setPeliculas(data));
   };
   listarPeliculas();
+  
   return (
     <main>
       <h1>Bienvenido</h1>
       <hr />
-      {peliculas.map((eachPeliculas) => {
+      {peliculas.map(eachPeliculas => {
         return (
-          <Link className="link" to="">
+          <Link className="link" to={`/detalle/${eachPeliculas._id}`}>
             <article className="peliculas-card">
               <h3>{eachPeliculas.nombre}</h3>
               <img src={eachPeliculas.imagen} />

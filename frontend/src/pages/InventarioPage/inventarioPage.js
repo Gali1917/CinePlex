@@ -42,7 +42,7 @@ const InventarioPage = () => {
                 </td>
                 <td>
                   <figure className="iconos">
-                    <Link to="/editar/:id">
+                    <Link to={`/editar/${eachPeliculas._id}`}>
                       <img src="https://i.postimg.cc/8PtnSYzF/editar.png" />
                     </Link>
                     <Link to="/eliminar/:id">
@@ -55,6 +55,9 @@ const InventarioPage = () => {
           })}
         </table>
       </article>
+      <Link className="link" to="/nueva_pelicula">
+        <button>Nuevo</button>
+      </Link>
       <Link className="link" to="/">
         <button>Volver</button>
       </Link>
