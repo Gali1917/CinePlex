@@ -15,7 +15,7 @@ const InventarioPage = () => {
       <h1>Listado de Peliculas</h1>
       <hr />
       <article className="inventario-tabla">
-        <table>
+        <table className="inventario-table">
           <tr>
             <th>nombre</th>
             <th>Tarifa</th>

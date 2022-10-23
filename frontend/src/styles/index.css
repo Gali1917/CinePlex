@@ -3,6 +3,7 @@ main{
 }
 main h1{
     margin: 8px;
+    color: white;
 }
 .peliculas-card{
     margin: 0 auto;

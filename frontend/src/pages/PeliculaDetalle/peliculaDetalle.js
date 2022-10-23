@@ -18,7 +18,7 @@ const PeliculaDetalle = () => {
         <h1>{pelicula.nombre}</h1>
         <article className="article-pelicula">
           <div className="imagen">
-            <img className="imagen-pelicula" src={pelicula.imagen} />
+            <img className="imagen-peliculas" src={pelicula.imagen} />
           </div>
           <div className="descripcion">
             <iframe

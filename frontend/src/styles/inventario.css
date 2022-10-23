@@ -19,11 +19,13 @@ main{
 }
 .inventario-tabla{
     overflow: auto;
-
+    width: 100%;
+}
+.inventario-table{
+    width: 100%;
 }
 
 table{
-    background-color: rgb(128, 141, 239);
     margin-bottom: 40px;
 }
 table th{
