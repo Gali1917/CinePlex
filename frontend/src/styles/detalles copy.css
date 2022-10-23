@@ -1,0 +1,206 @@
+.main-pelicula{
+    background-color: black;
+    min-width: 320px;
+}
+
+.section-pelicula{
+    position: relative;
+    padding-top: 40px;
+    margin: -500px 80px 80px;
+}
+.section-pelicula h1{
+    color: white;
+    font-weight: bold;
+    font-size: 3rem;
+    width: 300px;
+    border-radius: 8px;
+    margin: 0 auto;
+    margin-bottom: 160px; 
+    text-shadow: 2px 2px 1px black;
+}
+.portada-pelicula{
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+}
+.imagen{
+    width: 100%;
+}
+.imagen-pelicula{
+    width: 100%;
+}
+.trailer{
+    width: 720px;
+    height: 400px;
+
+}
+.article-pelicula{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-items: center;
+
+}
+.descripcion{
+    width: 720px;
+}
+.text-pelicula{
+    background-color: black;
+    color: white;
+    padding: 48px;
+}
+.sinopsis{
+    text-align: justify;
+    margin-bottom: 24px;
+}
+.tablas{
+    display: flex;
+    justify-content: space-evenly;
+}
+table{
+    background-color: #856332;
+    margin: 0 20px;
+}
+td{
+    background-color: black;
+    color: white;
+    border: 1px solid #f0e594;
+}
+@media(max-width: 419px){
+    .section-pelicula{
+        margin: 0 auto;
+        
+    }
+    
+    .section-pelicula h1{
+        position: sticky;
+        top: 72px;
+        z-index: 1;
+    }
+    .article-pelicula{
+        grid-template-columns: 1fr;
+    }
+    .trailer{
+        margin-top: 24px;
+        height: auto;
+        width: 100%;
+
+    }
+
+
+}
+@media(max-width: 600px){
+    .portada-pelicula{
+        z-index: 1;
+    }
+}
+@media(max-width: 1119px){
+    .section-pelicula{
+        margin: 0 auto;
+        margin: 0 10%;
+    }
+
+    .section-pelicula h1{
+        position: sticky;
+        top: 72px;
+        z-index: 1;
+    }
+    .article-pelicula{
+        grid-template-columns: 1fr;
+        max-width: 420px;
+        width: 100%;
+    }
+    .trailer{
+        margin-top: 24px;
+        height: auto;
+        max-width: 420px;
+        width: 100%;
+
+    }
+    .descripcion{
+        width: 100%;
+    }
+
+    .tablas{
+        display: grid;   
+        gap: 24px;     
+    }
+    .imagen-pelicula{
+        max-width: 420px;
+        
+    }
+}
+@media(min-width: 1200px){
+    .main-pelicula{
+    background-color: black;
+    min-width: 320px;
+}
+
+.section-pelicula{
+    position: relative;
+    padding-top: 40px;
+    margin: -500px 80px 80px;
+}
+.section-pelicula h1{
+    color: white;
+    font-weight: bold;
+    font-size: 3rem;
+    width: 300px;
+    border-radius: 8px;
+    margin: 0 auto;
+    margin-bottom: 160px; 
+    text-shadow: 2px 2px 1px black;
+}
+.portada-pelicula{
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+}
+.imagen{
+    width: 100%;
+}
+.imagen-pelicula{
+    width: 100%;
+}
+.trailer{
+    width: 720px;
+    height: 400px;
+
+}
+.article-pelicula{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-items: center;
+
+}
+.descripcion{
+    width: 720px;
+}
+.text-pelicula{
+    background-color: black;
+    color: white;
+    padding: 48px;
+}
+.sinopsis{
+    text-align: justify;
+    margin-bottom: 24px;
+}
+.tablas{
+    display: flex;
+    justify-content: space-evenly;
+}
+table{
+    background-color: #856332;
+    margin: 0 20px;
+}
+td{
+    background-color: black;
+    color: white;
+    border: 1px solid #f0e594;
+}
+}

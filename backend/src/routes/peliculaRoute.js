@@ -32,7 +32,8 @@ router.post('/peliculas/nueva_pelicula', (req, res) =>{
         restriccion: req.body.restriccion,
         imagen: req.body.imagen,
         trailer: req.body.trailer,
-        sinopsis: req.body.sinopsis
+        sinopsis: req.body.sinopsis,
+        portada: req.body.portada
     })
     nuevaPelicula.save(function(err){
         if(!err){
@@ -70,12 +71,24 @@ router.get('/peliculas/:id', (req, res) =>{
     });
 });
 
+//Obtener Datos
+router.post('/peliculas/obtener_datos', (req, res) =>{
+    peliculaSchema.find({id:req.body.id}, function(data, err){
+        if(!err){
+            res.send(data)
+        }
+        else{
+            res.send(err)
+        }
+    })
+})
+
 //Editar Pelicula
 router.put('/peliculas/:id', (req, res) =>{
     const {id} = req.params;
-    const {nombre, tarifa, hora_inicio, idioma, tipo, categoria, restriccion, imagen} = req.body;
+    const {nombre, tarifa, hora_inicio, idioma, tipo, categoria, restriccion, imagen, trailer, sinopsis, portada} = req.body;
     peliculaSchema
-    .updateOne({_id: id}, {$set: {nombre, tarifa, hora_inicio, idioma, tipo, categoria, restriccion, imagen}})
+    .updateOne({_id: id}, {$set: {nombre, tarifa, hora_inicio, idioma, tipo, categoria, restriccion, imagen, trailer, sinopsis, portada}})
     .then((data) =>{
         res.json(data)
     })

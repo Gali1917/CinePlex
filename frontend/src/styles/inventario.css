@@ -54,3 +54,8 @@ main button{
     right: 0;
     margin: auto;
 }
+button a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}

@@ -1,6 +1,5 @@
 main{
     text-align: center;
-    padding-top: 16px;
 }
 main h1{
     margin: 16px;
@@ -13,6 +12,7 @@ main h1{
     width: 300px;
     background-color: red;
     border-radius: 4px;
+    
     box-shadow: 4px 4px 10px 4px black ;
 }
 .login{
@@ -40,8 +40,13 @@ main h1{
 button{
     background-color: red;
     border: 2px solid white;
+    color: white;
+    font-weight: bold;
     border-radius: 8px;
     height: 32px;
     width: 76px;
-    box-shadow: 2px 2px 5px 2px black;
+    box-shadow: 2px 2px 5px 2px black;  
+}
+Link{
+    text-decoration: none;
 }

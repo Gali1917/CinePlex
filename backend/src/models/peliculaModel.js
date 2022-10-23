@@ -41,6 +41,10 @@ const peliculaSchema = mongoose.Schema({
     sinopsis: {
         type: String,
         required: true
+    },
+    portada:{
+        type: String,
+        required: true
     }
 });
 

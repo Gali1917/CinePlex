@@ -14,6 +14,7 @@ const Nuevo = () => {
   const [imagen, setImagen] = useState('');
   const [trailer, setTrailer] = useState('');
   const [sinopsis, setSinopsis] = useState('');
+  const [portada, setPortada] = useState('');
 
 
   const nuevaPelicula = () => {
@@ -27,8 +28,8 @@ const Nuevo = () => {
       restriccion: restriccion,
       imagen: imagen,
       trailer: trailer,
-      sinopsis: sinopsis
-      
+      sinopsis: sinopsis,
+      portada: portada
     }
     axios.post('/api/peliculas/nueva_pelicula', peliculass)
     .then(res => {
@@ -126,6 +127,15 @@ const Nuevo = () => {
               id="sinopsis"
               type="text"
               placeholder="Sinopsis..." value={sinopsis} onChange={(e) => {setSinopsis(e.target.value)}}
+              required
+            ></input>
+          </div>
+          <div className="input-label">
+            <label>Portada:</label>
+            <input
+              id="portada"
+              type="text"
+              placeholder="Portada..." value={portada} onChange={(e) => {setPortada(e.target.value)}}
               required
             ></input>
           </div>

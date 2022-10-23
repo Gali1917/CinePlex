@@ -13,15 +13,19 @@ body{
   font-family: sans-serif;
   font-weight: 300;
   font-size: 1.6rem;
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
+  min-width: 320px;
+
   position: relative;
 }
+
 header{
   background-color: black;
   width: 100%;
   display: flex;
   padding: 16px;
+  z-index: 5;
 }
 header img{
   width: 180px;
@@ -45,13 +49,19 @@ form input{
 }
 form button{
   border: none;
-  background-color: black;
-}
-form img{
+  border-radius: 50%;
   width: 32px;
+  background-color: transparent;
   position: absolute;
   left: 172px;
   top: 4px;
+  padding: 1px;
+  box-shadow: none;
+}
+form img{
+  width: 32px;
+  width: 0 auto;
+  
 }
 main{
   padding-bottom: 120px;
@@ -63,6 +73,7 @@ footer{
   color: white;
   padding: 8px;
   width: 100%;
+  z-index: 2;
 }
 .footer-titulo{
   text-align: center;
@@ -79,6 +90,9 @@ footer{
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+.footer-body ul li{
+  list-style: none;
+}
 .footer-texto{
   text-align: center;
 }
@@ -86,7 +100,19 @@ footer{
   text-decoration: none;
   color: white;
 }
+.mapa{
+  margin: 0 auto;
+}
 iframe{
   width: 177px;
   height: 70px;
+}
+@media(min-width: 420px){
+  footer{
+    padding-bottom: 24px;
+  }
+  .footer-body{
+    max-width: 900px;
+    margin: 0 auto;
+  }
 }
