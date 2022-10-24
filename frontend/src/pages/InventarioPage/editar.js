@@ -1,53 +1,58 @@
-import { useParams } from "react-router";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
-import {Link} from "react-router-dom";
-
-function Editar() {
-  const {pelicula_id} = useParams();
-  //Hooks
-  const [nombre, setNombre] = useState("");
-  const [tarifa, setTarifa] = useState("");
-  const [hora_inicio, setHora_inicio] = useState("");
-  const [idioma, setIdioma] = useState("");
-  const [tipo, setTipo] = useState("");
-  const [categoria, setCategoria] = useState("");
-  const [restriccion, setRestriccion] = useState("");
-  const [imagen, setImagen] = useState("");
-  const [trailer, setTrailer] = useState("");
-  const [sinopsis, setSinopsis] = useState("");
-
-  useEffect(() => {
-    axios
-    .put(`/api/peliculas/${pelicula_id}`, {
-      })
-      .then((res) => {
-        console.log(res.data);
-        const dataPelicula = res.data;
-        setNombre(dataPelicula.nombre)
-        setTarifa(dataPelicula.tarifa)
-        setHora_inicio(dataPelicula.hora_inicio)
-        setIdioma(dataPelicula.idioma)
-        setTipo(dataPelicula.tipo)
-        setCategoria(dataPelicula.categoria)
-        setRestriccion(dataPelicula.restriccion)
-        setImagen(dataPelicula.imagen)
-        setTrailer(dataPelicula.trailer)
-        setSinopsis(dataPelicula.sinopsis)
-      });
-  }, []);
 
 
-  //Actualizar pelicula
-  function editarPelicula(){
+const Editar = () => {
 
+  const [nombre, setNombre] = useState('');
+  const [tarifa, setTarifa] = useState('');
+  const [hora_inicio, setHora_inicio] = useState('');
+  const [idioma, setIdioma] = useState('');
+  const [tipo, setTipo] = useState('');
+  const [categoria, setCategoria] = useState('');
+  const [restriccion, setRestriccion] = useState('');
+  const [imagen, setImagen] = useState('');
+  const [trailer, setTrailer] = useState('');
+  const [sinopsis, setSinopsis] = useState('');
+
+
+  const { pelicula_id } = useParams();
+  const [pelicula, setPelicula] = useState({});
+  
+  const idPeliculas = () => {
+    fetch(`http://localhost:5005/api/peliculas/${pelicula_id}`)
+      .then((res) => res.json())
+      .then((pelicula) => setPelicula(pelicula));
+  };
+  idPeliculas();
+
+  async function saveMovie() {
+    var peliculaObtenida = {
+      nombre: nombre,
+      tarifa: tarifa,
+      hora_inicio: hora_inicio,
+      idioma: idioma,
+      tipo: tipo,
+      categoria: categoria,
+      restriccion: restriccion,
+      imagen: imagen,
+      trailer: trailer,
+      sinopsis: sinopsis
+    }
+
+    await axios.put(`http://localhost:5005/api/peliculas/${pelicula_id}`, peliculaObtenida).then(res => {
+    console.log(" response: ", res)
+    }).catch((error) => {
+      console.log("error : ", error)
+    });
   }
+
 
   return (
     <main>
-      <h1>{pelicula_id.id} </h1>
-      <h1>{pelicula_id.nombre} </h1>
-
+      <h1>{pelicula.nombre} </h1>
       <hr />
       <article className="login-card">
         <h3>Editar</h3>
@@ -57,8 +62,8 @@ function Editar() {
             <input
               id="nombre"
               type="text"
-              value={`${nombre}`}
-              onChange={(e) =>{setNombre(e.target.value)}}
+              placeholder={`${pelicula.nombre}`}
+              value={nombre} onChange={(e) => {setNombre(e.target.value)}}
               required
             ></input>
           </div>
@@ -67,8 +72,8 @@ function Editar() {
             <input
               id="tarifa"
               type="text"
-              value={`${tarifa}`}
-              onChange={(e) =>{setTarifa(e.target.value)}}
+              placeholder={`${pelicula.tarifa}`}
+              value={tarifa} onChange={(e) => {setTarifa(e.target.value)}}
               required
             ></input>
           </div>
@@ -77,8 +82,8 @@ function Editar() {
             <input
               id="hora_inicio"
               type="text"
-              value={`${hora_inicio}`}              
-              onChange={(e) =>{setHora_inicio(e.target.value)}}
+              placeholder={`${pelicula.hora_inicio}`}
+              value={hora_inicio} onChange={(e) => {setHora_inicio(e.target.value)}}
               required
             ></input>
           </div>
@@ -87,8 +92,8 @@ function Editar() {
             <input
               id="idioma"
               type="text"
-              value={`${idioma}`}
-              onChange={(e) =>{setIdioma(e.target.value)}}
+              placeholder={`${pelicula.idioma}`}
+              value={idioma} onChange={(e) => {setIdioma(e.target.value)}}
               required
             ></input>
           </div>
@@ -97,8 +102,8 @@ function Editar() {
             <input
               id="tipo"
               type="text"
-              value={`${tipo}`}
-              onChange={(e) =>{setTipo(e.target.value)}}
+              placeholder={`${pelicula.tipo}`}
+              value={tipo} onChange={(e) => {setTipo(e.target.value)}}
               required
             ></input>
           </div>
@@ -107,8 +112,8 @@ function Editar() {
             <input
               id="categoria"
               type="text"
-              value={`${categoria}`}
-              onChange={(e) =>{setCategoria(e.target.value)}}
+              placeholder={`${pelicula.categoria}`}
+              value={categoria} onChange={(e) => {setCategoria(e.target.value)}}
               required
             ></input>
           </div>
@@ -117,8 +122,8 @@ function Editar() {
             <input
               id="restriccion"
               type="text"
-              value={`${restriccion}`}
-              onChange={(e) =>{setRestriccion(e.target.value)}}
+              placeholder={`${pelicula.restriccion}`}
+              value={restriccion} onChange={(e) => {setRestriccion(e.target.value)}}
               required
             ></input>
           </div>
@@ -127,8 +132,8 @@ function Editar() {
             <input
               id="imagen"
               type="text"
-              value={`${imagen}`}
-              onChange={(e) =>{setImagen(e.target.value)}}
+              placeholder={`${pelicula.imagen}`}
+              value={imagen} onChange={(e) => {setImagen(e.target.value)}}
               required
             ></input>
           </div>
@@ -137,8 +142,8 @@ function Editar() {
             <input
               id="trailer"
               type="text"
-              value={`${trailer}`}
-              onChange={(e) =>{setTrailer(e.target.value)}}
+              placeholder={`${pelicula.trailer}`}
+              value={trailer} onChange={(e) => {setTrailer(e.target.value)}}
               required
             ></input>
           </div>
@@ -147,13 +152,14 @@ function Editar() {
             <input
               id="sinopsis"
               type="text"
-              value={`${sinopsis}`}
-              onChange={(e) =>{setSinopsis(e.target.value)}}
+              placeholder={`${pelicula.sinopsis}`}
+              value={sinopsis} onChange={(e) => {setSinopsis(e.target.value)}}
               required
             ></input>
           </div>
 
-          <button onClick={editarPelicula}>
+
+          <button onClick={saveMovie} >
             <Link to="/inventario">Guardar</Link>
           </button>
 
@@ -164,21 +170,3 @@ function Editar() {
 };
 
 export default Editar;
-
-// import { useState } from "react";
-// import { useParams } from "react-router-dom";
-// import { Link } from "react-router-dom";
-
-// const Editar = () => {
-
-//   const { pelicula_id } = useParams();
-//   const [pelicula, setPelicula] = useState({});
-//   const idPeliculas = () => {
-//     fetch(`http://localhost:5005/api/peliculas/${pelicula_id}`)
-//       .then((res) => res.json())
-//       .then((pelicula) => setPelicula(pelicula));
-//   };
-//   idPeliculas();
- 
-
-// export default Editar;
