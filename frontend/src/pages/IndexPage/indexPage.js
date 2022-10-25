@@ -1,14 +1,25 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import("../../styles/index.css");
 const IndexPage = () => {
+  
   const [peliculas, setPeliculas] = useState([]);
-  const listarPeliculas = () => {
-    fetch("http://localhost:5005/api/peliculas")
+
+  useEffect(() => {
+    fetch(
+      'http://localhost:5005/api/peliculas'
+    )
       .then((res) => res.json())
-      .then((data) => setPeliculas(data));
-  };
-  listarPeliculas();
+      .then((movies) => {
+        showMovies(movies);
+      })
+      .catch((err) => console.log(err));
+  },[]);
+
+  function showMovies(movies) {
+    setPeliculas(movies)
+    console.log("movies: ",movies)
+  }
 
   return (
     <main>
