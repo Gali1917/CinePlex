@@ -63,7 +63,7 @@ const Editar = () => {
               id="nombre"
               type="text"
               placeholder={`${pelicula.nombre}`}
-              value={nombre} onChange={(e) => {setNombre(e.target.value)}}
+              value={pelicula.nombre} onChange={(e) => {setNombre(e.target.value)}}
               required
             ></input>
           </div>
@@ -73,7 +73,7 @@ const Editar = () => {
               id="tarifa"
               type="text"
               placeholder={`${pelicula.tarifa}`}
-              value={tarifa} onChange={(e) => {setTarifa(e.target.value)}}
+              value={pelicula.tarifa} onChange={(e) => {setTarifa(e.target.value)}}
               required
             ></input>
           </div>
@@ -83,7 +83,7 @@ const Editar = () => {
               id="hora_inicio"
               type="text"
               placeholder={`${pelicula.hora_inicio}`}
-              value={hora_inicio} onChange={(e) => {setHora_inicio(e.target.value)}}
+              value={pelicula.hora_inicio} onChange={(e) => {setHora_inicio(e.target.value)}}
               required
             ></input>
           </div>
@@ -93,7 +93,7 @@ const Editar = () => {
               id="idioma"
               type="text"
               placeholder={`${pelicula.idioma}`}
-              value={idioma} onChange={(e) => {setIdioma(e.target.value)}}
+              value={pelicula.idioma} onChange={(e) => {setIdioma(e.target.value)}}
               required
             ></input>
           </div>
@@ -103,7 +103,7 @@ const Editar = () => {
               id="tipo"
               type="text"
               placeholder={`${pelicula.tipo}`}
-              value={tipo} onChange={(e) => {setTipo(e.target.value)}}
+              value={pelicula.tipo} onChange={(e) => {setTipo(e.target.value)}}
               required
             ></input>
           </div>
@@ -113,7 +113,7 @@ const Editar = () => {
               id="categoria"
               type="text"
               placeholder={`${pelicula.categoria}`}
-              value={categoria} onChange={(e) => {setCategoria(e.target.value)}}
+              value={pelicula.categoria} onChange={(e) => {setCategoria(e.target.value)}}
               required
             ></input>
           </div>
@@ -123,7 +123,7 @@ const Editar = () => {
               id="restriccion"
               type="text"
               placeholder={`${pelicula.restriccion}`}
-              value={restriccion} onChange={(e) => {setRestriccion(e.target.value)}}
+              value={pelicula.restriccion} onChange={(e) => {setRestriccion(e.target.value)}}
               required
             ></input>
           </div>
@@ -133,7 +133,7 @@ const Editar = () => {
               id="imagen"
               type="text"
               placeholder={`${pelicula.imagen}`}
-              value={imagen} onChange={(e) => {setImagen(e.target.value)}}
+              value={pelicula.imagen} onChange={(e) => {setImagen(e.target.value)}}
               required
             ></input>
           </div>
@@ -143,7 +143,7 @@ const Editar = () => {
               id="trailer"
               type="text"
               placeholder={`${pelicula.trailer}`}
-              value={trailer} onChange={(e) => {setTrailer(e.target.value)}}
+              value={pelicula.trailer} onChange={(e) => {setTrailer(e.target.value)}}
               required
             ></input>
           </div>
@@ -153,7 +153,7 @@ const Editar = () => {
               id="sinopsis"
               type="text"
               placeholder={`${pelicula.sinopsis}`}
-              value={sinopsis} onChange={(e) => {setSinopsis(e.target.value)}}
+              value={pelicula.sinopsis} onChange={(e) => {setSinopsis(e.target.value)}}
               required
             ></input>
           </div>
