@@ -40,7 +40,7 @@ const InventarioPage = () => {
                 <td>
                   <img className="imagen-pelicula" src={eachPeliculas.imagen} />
                 </td>
-                <td>
+                <td className="inventario-accion">
                   <figure className="iconos">
                     <Link to={`/editar/${eachPeliculas._id}`}>
                       <img src="https://i.postimg.cc/8PtnSYzF/editar.png" />

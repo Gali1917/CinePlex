@@ -37,6 +37,9 @@ table tr{
     background-color: rgba(0, 0, 0, 0.044);
 
 }
+.inventario-accion{
+    background-color: #856332;
+}
 .imagen-pelicula{
     width: 100px;
 }
@@ -60,4 +63,13 @@ button a{
     text-decoration: none;
     color: white;
     font-weight: bold;
+}
+@media(min-width: 1200px){
+    .inventario-tabla{
+        overflow:visible;
+        width: 100%;
+    }
+    .inventario-table{
+        margin: 0;
+    }
 }
