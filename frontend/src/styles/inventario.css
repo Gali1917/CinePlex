@@ -37,11 +37,17 @@ table tr{
     background-color: rgba(0, 0, 0, 0.044);
 
 }
+table td{
+    padding: 2px;
+}
 .inventario-accion{
     background-color: #856332;
 }
 .imagen-pelicula{
     width: 100px;
+}
+.td-portada img{
+    height: 100px;
 }
 .iconos{
     display: grid;
@@ -64,10 +70,12 @@ button a{
     color: white;
     font-weight: bold;
 }
+
 @media(min-width: 1200px){
     .inventario-tabla{
         overflow:visible;
         width: 100%;
+        margin-bottom: 24px;
     }
     .inventario-table{
         margin: 0;

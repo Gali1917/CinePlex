@@ -16,6 +16,7 @@ const Editar = () => {
   const [imagen, setImagen] = useState('');
   const [trailer, setTrailer] = useState('');
   const [sinopsis, setSinopsis] = useState('');
+  const [portada, setPortada] = useState('');
 
 
   const { pelicula_id } = useParams();
@@ -39,7 +40,9 @@ const Editar = () => {
       restriccion: restriccion,
       imagen: imagen,
       trailer: trailer,
-      sinopsis: sinopsis
+      sinopsis: sinopsis,
+      portada: portada
+
     }
 
     await axios.put(`http://localhost:5005/api/peliculas/${pelicula_id}`, peliculaObtenida).then(res => {
@@ -154,6 +157,16 @@ const Editar = () => {
               type="text"
               placeholder={`${pelicula.sinopsis}`}
               value={pelicula.sinopsis} onChange={(e) => {setSinopsis(e.target.value)}}
+              required
+            ></input>
+          </div>
+          <div className="input-label">
+            <label>Portada:</label>
+            <input
+              id="portada"
+              type="text"
+              placeholder={`${pelicula.portada}`}
+              value={pelicula.portada} onChange={(e) => {setPortada(e.target.value)}}
               required
             ></input>
           </div>

@@ -39,15 +39,18 @@ const InventarioPage = () => {
       <article className="inventario-tabla">
         <table className="inventario-table">
           <tr>
-            <th>nombre</th>
-            <th>Tarifa</th>
-            <th>Hora de Inicio</th>
-            <th>Idioma</th>
-            <th>Tipo</th>
-            <th>Categoria</th>
-            <th>Restricciones</th>
-            <th>Imagen</th>
-            <th>Accion</th>
+            <th className="th-nombre">Nombre</th>
+            <th className="th-tarifa">Tarifa</th>
+            <th className="th-hora">Hora de Inicio</th>
+            <th className="th-idioma">Idioma</th>
+            <th className="th-tipo">Tipo</th>
+            <th className="th-categoria">Categoria</th>
+            <th className="th-restriccion">Restricciones</th>
+            <th className="th-imagen">Imagen</th>
+            <th className="th-trailer">Trailer</th>
+            <th className="th-sinopsis">Sinopsis</th>
+            <th className="th-portada">portada</th>
+            <th className="th-accion">Accion</th>
           </tr>
           {peliculas.map((eachPeliculas) => {
             return (
@@ -62,6 +65,11 @@ const InventarioPage = () => {
                 <td>
                   <img className="imagen-pelicula" src={eachPeliculas.imagen} />
                 </td>
+                <td>{eachPeliculas.trailer}</td>
+                <td>{eachPeliculas.sinopsis}</td>
+                <td className="td-portada">
+                  <img src={eachPeliculas.portada}/>
+                </td>
                 <td className="inventario-accion">
                   <figure className="iconos">
                     <Link to={`/editar/${eachPeliculas._id}`}>
@@ -73,6 +81,7 @@ const InventarioPage = () => {
                   </Link>
                   </figure>
                 </td>
+
               </tr>
             );
           })}
