@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/inventario.css";
+import axios from "axios";
 
 const InventarioPage = () => {
   const [peliculas, setPeliculas] = useState([]);
@@ -19,6 +20,16 @@ const InventarioPage = () => {
   function showMovies(movies) {
     setPeliculas(movies)
     console.log("movies: ",movies)
+  }
+
+  const HandleClick = (event, param) => {
+    console.log("id a eliminar", param)
+
+    axios.delete(`http://localhost:5005/api/peliculas/${param}`)
+    .then(res => {
+      console.log(res.data)
+    })
+    .then(err => {console.log(err)})
   }
 
   return (
@@ -56,9 +67,10 @@ const InventarioPage = () => {
                     <Link to={`/editar/${eachPeliculas._id}`}>
                       <img src="https://i.postimg.cc/8PtnSYzF/editar.png" />
                     </Link>
-                    <Link to="/eliminar/:id">
-                      <img src="https://i.postimg.cc/RVMb2m45/delete.png" />
-                    </Link>
+                    <Link to="/inventario">
+                    <img onClick={event => HandleClick(event, eachPeliculas._id)}
+                     src="https://i.postimg.cc/RVMb2m45/delete.png" />
+                  </Link>
                   </figure>
                 </td>
               </tr>
