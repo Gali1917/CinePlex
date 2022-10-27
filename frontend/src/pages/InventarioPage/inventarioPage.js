@@ -75,9 +75,8 @@ const InventarioPage = () => {
                     <Link to={`/editar/${eachPeliculas._id}`}>
                       <img src="https://i.postimg.cc/8PtnSYzF/editar.png" />
                     </Link>
-                    <Link to="/inventario">
-                    <img onClick={event => HandleClick(event, eachPeliculas._id)}
-                     src="https://i.postimg.cc/RVMb2m45/delete.png" />
+                    <Link onClick={event => HandleClick(event, eachPeliculas._id)} to="/inventario" >
+                    <img src="https://i.postimg.cc/RVMb2m45/delete.png" />
                   </Link>
                   </figure>
                 </td>
