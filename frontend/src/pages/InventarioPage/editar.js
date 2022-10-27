@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -19,10 +19,13 @@ const Editar = () => {
   const [portada, setPortada] = useState('');
 
 
+
   const { pelicula_id } = useParams();
   const [pelicula, setPelicula] = useState({});
   
   const idPeliculas = () => {
+    
+
     fetch(`http://localhost:5005/api/peliculas/${pelicula_id}`)
       .then((res) => res.json())
       .then((pelicula) => setPelicula(pelicula));
@@ -65,7 +68,7 @@ const Editar = () => {
             <input
               id="nombre"
               type="text"
-              placeholder={`${pelicula.nombre}`}
+              placeholder="Ingrese el Nombre"
               value={pelicula.nombre} onChange={(e) => {setNombre(e.target.value)}}
               required
             ></input>
@@ -75,7 +78,7 @@ const Editar = () => {
             <input
               id="tarifa"
               type="text"
-              placeholder={`${pelicula.tarifa}`}
+              placeholder="Ingrese la Tarifa"
               value={pelicula.tarifa} onChange={(e) => {setTarifa(e.target.value)}}
               required
             ></input>
@@ -85,7 +88,7 @@ const Editar = () => {
             <input
               id="hora_inicio"
               type="text"
-              placeholder={`${pelicula.hora_inicio}`}
+              placeholder="Ingrese la hora inicio"
               value={pelicula.hora_inicio} onChange={(e) => {setHora_inicio(e.target.value)}}
               required
             ></input>
@@ -95,7 +98,7 @@ const Editar = () => {
             <input
               id="idioma"
               type="text"
-              placeholder={`${pelicula.idioma}`}
+              placeholder="Ingrese el idioma"
               value={pelicula.idioma} onChange={(e) => {setIdioma(e.target.value)}}
               required
             ></input>
@@ -105,7 +108,7 @@ const Editar = () => {
             <input
               id="tipo"
               type="text"
-              placeholder={`${pelicula.tipo}`}
+              placeholder="Ingrese el Tipo"
               value={pelicula.tipo} onChange={(e) => {setTipo(e.target.value)}}
               required
             ></input>
@@ -115,7 +118,7 @@ const Editar = () => {
             <input
               id="categoria"
               type="text"
-              placeholder={`${pelicula.categoria}`}
+              placeholder="Ingrese la Categoria"
               value={pelicula.categoria} onChange={(e) => {setCategoria(e.target.value)}}
               required
             ></input>
@@ -125,7 +128,7 @@ const Editar = () => {
             <input
               id="restriccion"
               type="text"
-              placeholder={`${pelicula.restriccion}`}
+              placeholder="Ingrese la restriccion"
               value={pelicula.restriccion} onChange={(e) => {setRestriccion(e.target.value)}}
               required
             ></input>
@@ -135,7 +138,7 @@ const Editar = () => {
             <input
               id="imagen"
               type="text"
-              placeholder={`${pelicula.imagen}`}
+              placeholder="Ingrese el link de la imagen"
               value={pelicula.imagen} onChange={(e) => {setImagen(e.target.value)}}
               required
             ></input>
@@ -145,7 +148,7 @@ const Editar = () => {
             <input
               id="trailer"
               type="text"
-              placeholder={`${pelicula.trailer}`}
+              placeholder="Ingrese el link del trailer"
               value={pelicula.trailer} onChange={(e) => {setTrailer(e.target.value)}}
               required
             ></input>
@@ -155,7 +158,7 @@ const Editar = () => {
             <input
               id="sinopsis"
               type="text"
-              placeholder={`${pelicula.sinopsis}`}
+              placeholder="Ingrese la sipnosis"
               value={pelicula.sinopsis} onChange={(e) => {setSinopsis(e.target.value)}}
               required
             ></input>
@@ -165,7 +168,7 @@ const Editar = () => {
             <input
               id="portada"
               type="text"
-              placeholder={`${pelicula.portada}`}
+              placeholder="Ingrese el link de la portada"
               value={pelicula.portada} onChange={(e) => {setPortada(e.target.value)}}
               required
             ></input>

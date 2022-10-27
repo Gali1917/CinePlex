@@ -16,6 +16,10 @@ const Nuevo = () => {
   const [sinopsis, setSinopsis] = useState('');
   const [portada, setPortada] = useState('');
 
+  const action = ()=>{
+    nuevaPelicula()
+    window.location.reload();
+  }
 
   const nuevaPelicula = () => {
     var peliculass = {
@@ -139,7 +143,7 @@ const Nuevo = () => {
               required
             ></input>
           </div>
-          <button onClick={nuevaPelicula}>
+          <button onClick={action}>
             <Link to="/inventario">Crear</Link>
           </button>
         </div>
