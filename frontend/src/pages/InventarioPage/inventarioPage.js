@@ -21,15 +21,17 @@ const InventarioPage = () => {
     setPeliculas(movies)
     console.log("movies: ",movies)
   }
-
+  
   const HandleClick = (event, param) => {
     console.log("id a eliminar", param)
-
-    axios.delete(`http://localhost:5005/api/peliculas/${param}`)
-    .then(res => {
-      console.log(res.data)
-    })
-    .then(err => {console.log(err)})
+    if(window.confirm('Esta seguro de eliminar la pelicula seleccionada?')){
+      axios.delete(`http://localhost:5005/api/peliculas/${param}`)
+      .then(res => {
+        console.log(res.data)      
+        window.location.reload(true)
+      })
+      .then(err => {console.log(err)})
+    }
   }
 
   return (
