@@ -18,7 +18,10 @@ const port = process.env.PORT || 5005;
 app.use(express.json());
 app.use('/api', peliculasRoutes);
 
-
+//impotacion body parser
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:'true'}));
 
 
 // const whiteList = 'http://localhost:3000';

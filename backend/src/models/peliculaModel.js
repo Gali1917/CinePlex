@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const peliculaSchema = mongoose.Schema({
+
     nombre: {
         type: String,
         required: true
@@ -38,6 +39,10 @@ const peliculaSchema = mongoose.Schema({
         required: true
     },
     sinopsis: {
+        type: String,
+        required: true
+    },
+    portada:{
         type: String,
         required: true
     }

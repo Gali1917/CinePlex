@@ -2,6 +2,8 @@ import "./App.css";
 import IndexPage from "./pages/IndexPage/indexPage";
 import InventarioPage from "./pages/InventarioPage/inventarioPage";
 import PeliculaDetalle from "./pages/PeliculaDetalle/peliculaDetalle";
+import Editar from "./pages/InventarioPage/editar";
+import Nuevo from "./pages/InventarioPage/nuevo";
 import { Routes, Route, Link } from "react-router-dom";
 import LoginPage from "./pages/LoginPage/loginPage";
 
@@ -23,8 +25,10 @@ function App() {
         <Routes>
           <Route path="/" element={<IndexPage />} />
           <Route path="/inventario" element={<InventarioPage />} />
-          <Route path="/detalles" element={<PeliculaDetalle />} />
+          <Route path="/detalle/:pelicula_id" element={<PeliculaDetalle />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/editar/:pelicula_id" element={<Editar/>} />
+          <Route path="/nueva_pelicula" element={<Nuevo/>} />
         </Routes>
       </main>
       <footer>
