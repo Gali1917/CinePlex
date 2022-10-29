@@ -11,7 +11,9 @@ function App() {
   return (
     <body className="container">
       <header>
-        <img src="https://i.postimg.cc/mrqPbkfc/logon.png" />
+        <Link to='/'>
+          <img src="https://i.postimg.cc/mrqPbkfc/logon.png" />
+        </Link>
       </header>
       <nav>
         <form>
@@ -27,8 +29,8 @@ function App() {
           <Route path="/inventario" element={<InventarioPage />} />
           <Route path="/detalle/:pelicula_id" element={<PeliculaDetalle />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/editar/:pelicula_id" element={<Editar/>} />
-          <Route path="/nueva_pelicula" element={<Nuevo/>} />
+          <Route path="/editar/:pelicula_id" element={<Editar />} />
+          <Route path="/nueva_pelicula" element={<Nuevo />} />
         </Routes>
       </main>
       <footer>

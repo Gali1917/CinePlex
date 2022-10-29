@@ -59,135 +59,135 @@ const Editar = () => {
       window.location = './inventario';
 
     }
-   
+
   }
 
-return (
-  <main>
-    <h1>{pelicula.nombre} </h1>
-    <hr />
-    <article className="login-card">
-      <h3>Editar</h3>
-      <div className="login">
-        <div className="input-label">
-          <label>Nombre:</label>
-          <input
-            id="nombre"
-            type="text"
-            placeholder="Ingrese el nombre"
-            defaultValue={pelicula.nombre} onChange={(e) => { setNombre(e.target.value) }}
-            required
-          ></input>
-        </div>
-        <div className="input-label">
-          <label>Tarifa:</label>
-          <input
-            id="tarifa"
-            type="text"
-            placeholder="Ingrese la Tarifa"
-            defaultValue={pelicula.tarifa} onChange={(e) => { setTarifa(e.target.value) }}
-            required
-          ></input>
-        </div>
-        <div className="input-label">
-          <label>Hora de inicio:</label>
-          <input
-            id="hora_inicio"
-            type="text"
-            placeholder="Ingrese la hora inicio"
-            defaultValue={pelicula.hora_inicio} onChange={(e) => { setHora_inicio(e.target.value) }}
-            required
-          ></input>
-        </div>
-        <div className="input-label">
-          <label>idioma:</label>
-          <input
-            id="idioma"
-            type="text"
-            placeholder="Ingrese el idioma"
-            defaultValue={pelicula.idioma} onChange={(e) => { setIdioma(e.target.value) }}
-            required
-          ></input>
-        </div>
-        <div className="input-label">
-          <label>Tipo:</label>
-          <input
-            id="tipo"
-            type="text"
-            placeholder="Ingrese el Tipo"
-            defaultValue={pelicula.tipo} onChange={(e) => { setTipo(e.target.value) }}
-            required
-          ></input>
-        </div>
-        <div className="input-label">
-          <label>Categoria:</label>
-          <input
-            id="categoria"
-            type="text"
-            placeholder="Ingrese la Categoria"
-            defaultValue={pelicula.categoria} onChange={(e) => { setCategoria(e.target.value) }}
-            required
-          ></input>
-        </div>
-        <div className="input-label">
-          <label>Restriccion:</label>
-          <input
-            id="restriccion"
-            type="text"
-            placeholder="Ingrese la restriccion"
-            defaultValue={pelicula.restriccion} onChange={(e) => { setRestriccion(e.target.value) }}
-            required
-          ></input>
-        </div>
-        <div className="input-label">
-          <label>Imagen:</label>
-          <input
-            id="imagen"
-            type="text"
-            placeholder="Ingrese el link de la imagen"
-            defaultValue={pelicula.imagen} onChange={(e) => { setImagen(e.target.value) }}
-            required
-          ></input>
-        </div>
-        <div className="input-label">
-          <label>Trailer:</label>
-          <input
-            id="trailer"
-            type="text"
-            placeholder="Ingrese el link del trailer"
-            defaultValue={pelicula.trailer} onChange={(e) => { setTrailer(e.target.value) }}
-            required
-          ></input>
-        </div>
-        <div className="input-label">
-          <label>Sinopsis:</label>
-          <input
-            id="sinopsis"
-            type="text"
-            placeholder="Ingrese la sipnosis"
-            defaultValue={pelicula.sinopsis} onChange={(e) => { setSinopsis(e.target.value) }}
-            required
-          ></input>
-        </div>
-        <div className="input-label">
-          <label>Portada:</label>
-          <input
-            id="portada"
-            type="text"
-            placeholder="Ingrese el link de la portada"
-            defaultValue={pelicula.portada} onChange={(e) => { setPortada(e.target.value) }}
-            required
-          ></input>
-        </div>
+  return (
+    <main>
+      <h1>{pelicula.nombre} </h1>
+      <hr />
+      <article className="login-card">
+        <h3>Editar</h3>
+        <div className="login">
+          <div className="input-label">
+            <label>Nombre:</label>
+            <input
+              id="nombre"
+              type="text"
+              placeholder="Ingrese el nombre"
+              defaultValue={pelicula.nombre} onChange={(e) => { setNombre(e.target.value) }}
+              required
+            ></input>
+          </div>
+          <div className="input-label">
+            <label>Tarifa:</label>
+            <input
+              id="tarifa"
+              type="text"
+              placeholder="Ingrese la Tarifa"
+              defaultValue={pelicula.tarifa} onChange={(e) => { setTarifa(e.target.value) }}
+              required
+            ></input>
+          </div>
+          <div className="input-label">
+            <label>Hora de inicio:</label>
+            <input
+              id="hora_inicio"
+              type="text"
+              placeholder="Ingrese la hora inicio"
+              defaultValue={pelicula.hora_inicio} onChange={(e) => { setHora_inicio(e.target.value) }}
+              required
+            ></input>
+          </div>
+          <div className="input-label">
+            <label>idioma:</label>
+            <input
+              id="idioma"
+              type="text"
+              placeholder="Ingrese el idioma"
+              defaultValue={pelicula.idioma} onChange={(e) => { setIdioma(e.target.value) }}
+              required
+            ></input>
+          </div>
+          <div className="input-label">
+            <label>Tipo:</label>
+            <input
+              id="tipo"
+              type="text"
+              placeholder="Ingrese el Tipo"
+              defaultValue={pelicula.tipo} onChange={(e) => { setTipo(e.target.value) }}
+              required
+            ></input>
+          </div>
+          <div className="input-label">
+            <label>Categoria:</label>
+            <input
+              id="categoria"
+              type="text"
+              placeholder="Ingrese la Categoria"
+              defaultValue={pelicula.categoria} onChange={(e) => { setCategoria(e.target.value) }}
+              required
+            ></input>
+          </div>
+          <div className="input-label">
+            <label>Restriccion:</label>
+            <input
+              id="restriccion"
+              type="text"
+              placeholder="Ingrese la restriccion"
+              defaultValue={pelicula.restriccion} onChange={(e) => { setRestriccion(e.target.value) }}
+              required
+            ></input>
+          </div>
+          <div className="input-label">
+            <label>Imagen:</label>
+            <input
+              id="imagen"
+              type="text"
+              placeholder="Ingrese el link de la imagen"
+              defaultValue={pelicula.imagen} onChange={(e) => { setImagen(e.target.value) }}
+              required
+            ></input>
+          </div>
+          <div className="input-label">
+            <label>Trailer:</label>
+            <input
+              id="trailer"
+              type="text"
+              placeholder="Ingrese el link del trailer"
+              defaultValue={pelicula.trailer} onChange={(e) => { setTrailer(e.target.value) }}
+              required
+            ></input>
+          </div>
+          <div className="input-label">
+            <label>Sinopsis:</label>
+            <input
+              id="sinopsis"
+              type="text"
+              placeholder="Ingrese la sipnosis"
+              defaultValue={pelicula.sinopsis} onChange={(e) => { setSinopsis(e.target.value) }}
+              required
+            ></input>
+          </div>
+          <div className="input-label">
+            <label>Portada:</label>
+            <input
+              id="portada"
+              type="text"
+              placeholder="Ingrese el link de la portada"
+              defaultValue={pelicula.portada} onChange={(e) => { setPortada(e.target.value) }}
+              required
+            ></input>
+          </div>
 
-        <Link to="/inventario">
-          <button onClick={saveMovie} >Guardar</button>
-        </Link>
+          <Link to="/inventario">
+            <button onClick={saveMovie} >Guardar</button>
+          </Link>
 
-      </div>
-    </article>
-  </main>
-);
+        </div>
+      </article>
+    </main>
+  );
 };
 
 export default Editar;
