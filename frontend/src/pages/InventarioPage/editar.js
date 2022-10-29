@@ -4,48 +4,56 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 
+
 const Editar = () => {
+  
+  
 
-  const [nombre, setNombre] = useState('');
-  const [tarifa, setTarifa] = useState('');
-  const [hora_inicio, setHora_inicio] = useState('');
-  const [idioma, setIdioma] = useState('');
-  const [tipo, setTipo] = useState('');
-  const [categoria, setCategoria] = useState('');
-  const [restriccion, setRestriccion] = useState('');
-  const [imagen, setImagen] = useState('');
-  const [trailer, setTrailer] = useState('');
-  const [sinopsis, setSinopsis] = useState('');
-  const [portada, setPortada] = useState('');
+  var [nombre, setNombre] = useState('');
+  var [tarifa, setTarifa] = useState('');
+  var [hora_inicio, setHora_inicio] = useState('');
+  var [idioma, setIdioma] = useState('');
+  var [tipo, setTipo] = useState('');
+  var [categoria, setCategoria] = useState('');
+  var [restriccion, setRestriccion] = useState('');
+  var [imagen, setImagen] = useState('');
+  var [trailer, setTrailer] = useState('');
+  var [sinopsis, setSinopsis] = useState('');
+  var [portada, setPortada] = useState('');
 
-
+ 
 
   const { pelicula_id } = useParams();
   const [pelicula, setPelicula] = useState({});
-  
+
+
   const idPeliculas = () => {
-    
 
     fetch(`http://localhost:5005/api/peliculas/${pelicula_id}`)
       .then((res) => res.json())
-      .then((pelicula) => setPelicula(pelicula));
+      .then((pelicula) => {
+        setPelicula(pelicula)
+      });
   };
-  idPeliculas();
-
+  
+  useEffect(() => {   
+    idPeliculas();
+  }, []);
+  
   async function saveMovie() {
+    
     var peliculaObtenida = {
-      nombre: nombre,
-      tarifa: tarifa,
-      hora_inicio: hora_inicio,
-      idioma: idioma,
-      tipo: tipo,
-      categoria: categoria,
-      restriccion: restriccion,
-      imagen: imagen,
-      trailer: trailer,
-      sinopsis: sinopsis,
-      portada: portada
-
+      nombre: document.getElementById('nombre').value,
+      tarifa: document.getElementById('tarifa').value,
+      hora_inicio: document.getElementById('hora_inicio').value,
+      idioma: document.getElementById('idioma').value,
+      tipo: document.getElementById('tipo').value,
+      categoria: document.getElementById('categoria').value,
+      restriccion: document.getElementById('restriccion').value,
+      imagen: document.getElementById('imagen').value,
+      trailer: document.getElementById('trailer').value,
+      sinopsis: document.getElementById('sinopsis').value,
+      portada:  document.getElementById('portada').value
     }
 
     await axios.put(`http://localhost:5005/api/peliculas/${pelicula_id}`, peliculaObtenida).then(res => {
@@ -54,7 +62,7 @@ const Editar = () => {
       console.log("error : ", error)
     });
   }
-
+  
 
   return (
     <main>
@@ -68,8 +76,8 @@ const Editar = () => {
             <input
               id="nombre"
               type="text"
-              placeholder="Ingrese el Nombre"
-              value={pelicula.nombre} onChange={(e) => {setNombre(e.target.value)}}
+              placeholder="Ingrese el nombre"
+              defaultValue={pelicula.nombre} onChange={(e) => {setNombre(e.target.value)}}
               required
             ></input>
           </div>
@@ -79,7 +87,7 @@ const Editar = () => {
               id="tarifa"
               type="text"
               placeholder="Ingrese la Tarifa"
-              value={pelicula.tarifa} onChange={(e) => {setTarifa(e.target.value)}}
+              defaultValue={pelicula.tarifa} onChange={(e) => {setTarifa(e.target.value)}}
               required
             ></input>
           </div>
@@ -89,7 +97,7 @@ const Editar = () => {
               id="hora_inicio"
               type="text"
               placeholder="Ingrese la hora inicio"
-              value={pelicula.hora_inicio} onChange={(e) => {setHora_inicio(e.target.value)}}
+              defaultValue={pelicula.hora_inicio} onChange={(e) => {setHora_inicio(e.target.value)}}
               required
             ></input>
           </div>
@@ -99,7 +107,7 @@ const Editar = () => {
               id="idioma"
               type="text"
               placeholder="Ingrese el idioma"
-              value={pelicula.idioma} onChange={(e) => {setIdioma(e.target.value)}}
+              defaultValue={pelicula.idioma} onChange={(e) => {setIdioma(e.target.value)}}
               required
             ></input>
           </div>
@@ -109,7 +117,7 @@ const Editar = () => {
               id="tipo"
               type="text"
               placeholder="Ingrese el Tipo"
-              value={pelicula.tipo} onChange={(e) => {setTipo(e.target.value)}}
+              defaultValue={pelicula.tipo} onChange={(e) => {setTipo(e.target.value)}}
               required
             ></input>
           </div>
@@ -119,7 +127,7 @@ const Editar = () => {
               id="categoria"
               type="text"
               placeholder="Ingrese la Categoria"
-              value={pelicula.categoria} onChange={(e) => {setCategoria(e.target.value)}}
+              defaultValue={pelicula.categoria} onChange={(e) => {setCategoria(e.target.value)}}
               required
             ></input>
           </div>
@@ -129,7 +137,7 @@ const Editar = () => {
               id="restriccion"
               type="text"
               placeholder="Ingrese la restriccion"
-              value={pelicula.restriccion} onChange={(e) => {setRestriccion(e.target.value)}}
+              defaultValue={pelicula.restriccion} onChange={(e) => {setRestriccion(e.target.value)}}
               required
             ></input>
           </div>
@@ -139,7 +147,7 @@ const Editar = () => {
               id="imagen"
               type="text"
               placeholder="Ingrese el link de la imagen"
-              value={pelicula.imagen} onChange={(e) => {setImagen(e.target.value)}}
+              defaultValue={pelicula.imagen} onChange={(e) => {setImagen(e.target.value)}}
               required
             ></input>
           </div>
@@ -149,7 +157,7 @@ const Editar = () => {
               id="trailer"
               type="text"
               placeholder="Ingrese el link del trailer"
-              value={pelicula.trailer} onChange={(e) => {setTrailer(e.target.value)}}
+              defaultValue={pelicula.trailer} onChange={(e) => {setTrailer(e.target.value)}}
               required
             ></input>
           </div>
@@ -159,7 +167,7 @@ const Editar = () => {
               id="sinopsis"
               type="text"
               placeholder="Ingrese la sipnosis"
-              value={pelicula.sinopsis} onChange={(e) => {setSinopsis(e.target.value)}}
+              defaultValue={pelicula.sinopsis} onChange={(e) => {setSinopsis(e.target.value)}}
               required
             ></input>
           </div>
@@ -169,7 +177,7 @@ const Editar = () => {
               id="portada"
               type="text"
               placeholder="Ingrese el link de la portada"
-              value={pelicula.portada} onChange={(e) => {setPortada(e.target.value)}}
+              defaultValue={pelicula.portada} onChange={(e) => {setPortada(e.target.value)}}
               required
             ></input>
           </div>
