@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import swal from "sweetalert";
 
 const Nuevo = () => {
   //Hooks
@@ -16,9 +17,10 @@ const Nuevo = () => {
   const [sinopsis, setSinopsis] = useState('');
   const [portada, setPortada] = useState('');
 
-  const action = ()=>{
+  const action = () => {
     nuevaPelicula()
-    window.location.reload();
+    window.location = './inventario';
+
   }
 
   const nuevaPelicula = () => {
@@ -36,10 +38,10 @@ const Nuevo = () => {
       portada: portada
     }
     axios.post('/api/peliculas/nueva_pelicula', peliculass)
-    .then(res => {
-      alert(res.data)
-    })
-    .then(err => {console.log(err)})
+      .then(res => {
+        // swal(res.data)
+      })
+      .then(err => { console.log(err) })
   };
   return (
     <main>
@@ -53,8 +55,8 @@ const Nuevo = () => {
             <input
               id="nombre"
               type="text"
-              placeholder="Nombre..." 
-              value={nombre} onChange={(e) => {setNombre(e.target.value)}}
+              placeholder="Nombre..."
+              value={nombre} onChange={(e) => { setNombre(e.target.value) }}
               required
             ></input>
           </div>
@@ -63,7 +65,7 @@ const Nuevo = () => {
             <input
               id="tarifa"
               type="text"
-              placeholder="Tarifa..." value={tarifa} onChange={(e) => {setTarifa(e.target.value)}}
+              placeholder="Tarifa..." value={tarifa} onChange={(e) => { setTarifa(e.target.value) }}
               required
             ></input>
           </div>
@@ -72,7 +74,7 @@ const Nuevo = () => {
             <input
               id="hora_inicio"
               type="text"
-              placeholder="Hora de inicio..." value={hora_inicio} onChange={(e) => {setHora_inicio(e.target.value)}}
+              placeholder="Hora de inicio..." value={hora_inicio} onChange={(e) => { setHora_inicio(e.target.value) }}
               required
             ></input>
           </div>
@@ -81,20 +83,20 @@ const Nuevo = () => {
             <input
               id="idioma"
               type="text"
-              placeholder="Idioma..." value={idioma} onChange={(e) => {setIdioma(e.target.value)}}
+              placeholder="Idioma..." value={idioma} onChange={(e) => { setIdioma(e.target.value) }}
               required
             ></input>
           </div>
           <div className="input-label">
             <label>Tipo:</label>
-            <input id="tipo" type="text" placeholder="Tipo..." value={tipo} onChange={(e) => {setTipo(e.target.value)}} required></input>
+            <input id="tipo" type="text" placeholder="Tipo..." value={tipo} onChange={(e) => { setTipo(e.target.value) }} required></input>
           </div>
           <div className="input-label">
             <label>Categoria:</label>
             <input
               id="categoria"
               type="text"
-              placeholder="Categoria..." value={categoria} onChange={(e) => {setCategoria(e.target.value)}}
+              placeholder="Categoria..." value={categoria} onChange={(e) => { setCategoria(e.target.value) }}
               required
             ></input>
           </div>
@@ -103,7 +105,7 @@ const Nuevo = () => {
             <input
               id="restriccion"
               type="text"
-              placeholder="Restriccion..." value={restriccion} onChange={(e) => {setRestriccion(e.target.value)}}
+              placeholder="Restriccion..." value={restriccion} onChange={(e) => { setRestriccion(e.target.value) }}
               required
             ></input>
           </div>
@@ -112,7 +114,7 @@ const Nuevo = () => {
             <input
               id="imagen"
               type="text"
-              placeholder="Imagen..." value={imagen} onChange={(e) => {setImagen(e.target.value)}}
+              placeholder="Imagen..." value={imagen} onChange={(e) => { setImagen(e.target.value) }}
               required
             ></input>
           </div>
@@ -121,7 +123,7 @@ const Nuevo = () => {
             <input
               id="trailer"
               type="text"
-              placeholder="Trailer..." value={trailer} onChange={(e) => {setTrailer(e.target.value)}}
+              placeholder="Trailer..." value={trailer} onChange={(e) => { setTrailer(e.target.value) }}
               required
             ></input>
           </div>
@@ -130,7 +132,7 @@ const Nuevo = () => {
             <input
               id="sinopsis"
               type="text"
-              placeholder="Sinopsis..." value={sinopsis} onChange={(e) => {setSinopsis(e.target.value)}}
+              placeholder="Sinopsis..." value={sinopsis} onChange={(e) => { setSinopsis(e.target.value) }}
               required
             ></input>
           </div>
@@ -139,13 +141,15 @@ const Nuevo = () => {
             <input
               id="portada"
               type="text"
-              placeholder="Portada..." value={portada} onChange={(e) => {setPortada(e.target.value)}}
+              placeholder="Portada..." value={portada} onChange={(e) => { setPortada(e.target.value) }}
               required
             ></input>
           </div>
-          <button onClick={action}>
-            <Link to="/inventario">Crear</Link>
-          </button>
+          <Link to="/inventario">
+            <button onClick={action}>
+              Crear
+            </button>
+          </Link>
         </div>
       </article>
     </main>

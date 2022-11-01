@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/inventario.css";
 import axios from "axios";
+import swal from "sweetalert";
 
 const InventarioPage = () => {
   const [peliculas, setPeliculas] = useState([]);
@@ -24,15 +25,29 @@ const InventarioPage = () => {
   
   const HandleClick = (event, param) => {
     console.log("id a eliminar", param)
-    if(window.confirm('Esta seguro de eliminar la pelicula seleccionada?')){
-      axios.delete(`http://localhost:5005/api/peliculas/${param}`)
-      .then(res => {
-        console.log(res.data)      
-        window.location.reload(true)
-      })
-      .then(err => {console.log(err)})
+    swal({
+      title: "Estas seguro?",
+      text: "Se eliminara la pelicula de la lista!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((condicion) => {
+      if (condicion) {
+        swal("La pelicula ha sido eliminada!", {
+          icon: "success",
+        });
+          axios.delete(`http://localhost:5005/api/peliculas/${param}`)
+          .then(res => {
+            console.log(res.data)      
+            window.location.reload(true)
+          })
+          .then(err => {console.log(err)})
+      } else {
+        swal("No se ha borrado la pelicula!");
+      }
+    });
     }
-  }
 
   return (
     <main>
