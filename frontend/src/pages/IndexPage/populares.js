@@ -40,7 +40,7 @@ const Populares = () => {
                 </div>
               </Link>
               <h3>{pelicula.title}</h3>
-              <img src={pelicula.poster_path} />
+              <img src={"https://image.tmdb.org/t/p/original/"+pelicula.poster_path} />
               <h4>Promedio votado: {pelicula.vote_average}</h4>
               <h4>Votado: {pelicula.vote_count}</h4>
               <h4>Popularidad: {pelicula.popularity}</h4>
