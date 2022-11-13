@@ -1,11 +1,13 @@
 import "./App.css";
 import IndexPage from "./pages/IndexPage/indexPage";
+import Populares from "./pages/IndexPage/populares";
 import InventarioPage from "./pages/InventarioPage/inventarioPage";
 import PeliculaDetalle from "./pages/PeliculaDetalle/peliculaDetalle";
 import Editar from "./pages/InventarioPage/editar";
 import Nuevo from "./pages/InventarioPage/nuevo";
 import { Routes, Route, Link } from "react-router-dom";
 import LoginPage from "./pages/LoginPage/loginPage";
+
 
 function App() {
   return (
@@ -21,11 +23,15 @@ function App() {
           <button>
             <img src="https://i.postimg.cc/Hxb3XVgK/search.png" />
           </button>
+          <Link  to="/populares">
+            <button class="btn-populares">Peliculas populares</button>
+          </Link>
         </form>
       </nav>
       <main>
         <Routes>
           <Route path="/" element={<IndexPage />} />
+          <Route path="/populares" element={<Populares />} />
           <Route path="/inventario" element={<InventarioPage />} />
           <Route path="/detalle/:pelicula_id" element={<PeliculaDetalle />} />
           <Route path="/login" element={<LoginPage />} />
@@ -63,8 +69,8 @@ function App() {
               src="https://maps.google.com/maps?q=central%20village&t=&z=11&ie=UTF8&iwloc=&output=embed"
               frameborder="0"
               scrolling="no"
-              marginheight="0"
-              marginwidth="0"
+              marginHeight="0"
+              marginWidth="0"
             ></iframe>
           </div>
         </div>
