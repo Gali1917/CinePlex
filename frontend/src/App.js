@@ -7,6 +7,7 @@ import Editar from "./pages/InventarioPage/editar";
 import Nuevo from "./pages/InventarioPage/nuevo";
 import { Routes, Route, Link } from "react-router-dom";
 import LoginPage from "./pages/LoginPage/loginPage";
+import PopularDetalle from "./pages/PeliculaDetalle/popularesDetalle copy";
 
 
 function App() {
@@ -23,10 +24,14 @@ function App() {
           <button>
             <img src="https://i.postimg.cc/Hxb3XVgK/search.png" />
           </button>
+
+        </form>
+          <Link  to="/">
+            <button class="btn-populares">Inicio</button>
+          </Link>
           <Link  to="/populares">
             <button class="btn-populares">Peliculas populares</button>
           </Link>
-        </form>
       </nav>
       <main>
         <Routes>
@@ -34,6 +39,7 @@ function App() {
           <Route path="/populares" element={<Populares />} />
           <Route path="/inventario" element={<InventarioPage />} />
           <Route path="/detalle/:pelicula_id" element={<PeliculaDetalle />} />
+          <Route path="/popular_detalle/:pelicula_id" element={<PopularDetalle />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/editar/:pelicula_id" element={<Editar />} />
           <Route path="/nueva_pelicula" element={<Nuevo />} />

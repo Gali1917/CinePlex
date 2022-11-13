@@ -16,6 +16,9 @@ main h1{
     position: relative;
     color: white;
 }
+.peliculas-card h4{
+    z-index: 4;
+}
 .peliculas-card img{
     width: 100%;
 }

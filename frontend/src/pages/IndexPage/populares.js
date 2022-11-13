@@ -9,7 +9,7 @@ const Populares = () => {
 
   useEffect(() => {
     fetch(
-        'https://api.themoviedb.org/3/movie/popular?api_key=be0b80f4f5804aafe5c649f24d564175&language=en-US&page=1'
+        'https://api.themoviedb.org/3/movie/popular?api_key=be0b80f4f5804aafe5c649f24d564175&language=es-US&page=1'
       )
         .then((res) => res.json())
         .then((item) => {
@@ -31,7 +31,7 @@ const Populares = () => {
         {peliculas.map((pelicula) => {
           return (
             <article className="peliculas-card">
-              <Link className="link" to={`/detalle/${pelicula.id}`}>
+              <Link className="link" to={`/popular_detalle/${pelicula.id}`}>
                 <div className="mas">
                   <img
                     className="mas-img"
