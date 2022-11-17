@@ -1,6 +1,8 @@
+import Portada from "./portada";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import("../../styles/index.css");
+
 const IndexPage = () => {
   
   const [peliculas, setPeliculas] = useState([]);
@@ -23,7 +25,7 @@ const IndexPage = () => {
 
   return (
     <main>
-      <h1>Bienvenido</h1>
+      <Portada/>
       <section className="section-index">
         {peliculas.map((eachPeliculas) => {
           return (

@@ -1,6 +1,10 @@
-import { Link } from "react-router-dom";
+// import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ("../../styles/login.css");
+
 const LoginPage = () => {
+  const nav = useNavigate();
+
   return (
     <main>
       <h1>Login</h1>
@@ -25,8 +29,8 @@ const LoginPage = () => {
               required
             ></input>
           </div>
-          <button>
-            <Link to="/inventario">Entrar</Link>
+          <button onClick={() => {if(document.getElementById("usuario").value == "admin" && document.getElementById("password").value == "admin"){nav('/inventario')} else{ alert("Datos invalidos")}}}>
+            Entrar
           </button>
         </div>
       </article>

@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const peliculasRoutes = require('./routes/peliculaRoute');
+const portadaRoutes = require('./routes/portadaRoute');
 //Variable de ambiente modificadas
 require('dotenv').config();
 
@@ -17,6 +18,8 @@ const port = process.env.PORT || 5005;
 //Middleware (antepone el /api a la ruta)
 app.use(express.json());
 app.use('/api', peliculasRoutes);
+app.use('/api', portadaRoutes);
+
 
 //impotacion body parser
 const bodyParser = require('body-parser');

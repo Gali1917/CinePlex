@@ -7,7 +7,7 @@ import Editar from "./pages/InventarioPage/editar";
 import Nuevo from "./pages/InventarioPage/nuevo";
 import { Routes, Route, Link } from "react-router-dom";
 import LoginPage from "./pages/LoginPage/loginPage";
-import PopularDetalle from "./pages/PeliculaDetalle/popularesDetalle copy";
+import PopularDetalle from "./pages/PeliculaDetalle/popularesDetalle";
 
 
 function App() {

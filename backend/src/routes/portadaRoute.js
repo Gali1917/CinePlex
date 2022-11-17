@@ -1,15 +1,15 @@
 const express = require('express');
 
 //importacion del modelo
-const peliculaSchema = require('../models/peliculaModel');
+const portadaSchema = require('../models/portadaModel');
 
 //enrutador
 const router = express.Router();
 
-//Crear Pelicula
-router.post('/peliculas/nueva_pelicula', (req, res) =>{
-    const pelicula = peliculaSchema(req.body);
-    pelicula
+//Crear Portada
+router.post('/portada/nueva_portada', (req, res) =>{
+    const portada = portadaSchema(req.body);
+    portada
     .save()
     .then((data) =>{
         res.json(data)
@@ -19,9 +19,9 @@ router.post('/peliculas/nueva_pelicula', (req, res) =>{
     });
 });
 
-//Listar Peliculas
-router.get('/peliculas', (req, res) =>{
-    peliculaSchema
+//Listar portadas
+router.get('/portada', (req, res) =>{
+    portadaSchema
     .find()
     .then((data) =>{
         res.json(data)
@@ -31,10 +31,10 @@ router.get('/peliculas', (req, res) =>{
     });
 });
 
-//Listar Pelicula por ID
-router.get('/peliculas/:id', (req, res) =>{
+//Listar portada por ID
+router.get('/portada/:id', (req, res) =>{
     const {id} = req.params;
-    peliculaSchema
+    portadaSchema
     .findById(id)
     .then((data) =>{
         res.json(data)
@@ -45,8 +45,8 @@ router.get('/peliculas/:id', (req, res) =>{
 });
 
 //Obtener Datos
-router.post('/peliculas/obtener_datos', (req, res) =>{
-    peliculaSchema.find({id:req.body.id}, function(data, err){
+router.post('/portada/obtener_datos', (req, res) =>{
+    portadaSchema.find({id:req.body.id}, function(data, err){
         if(!err){
             res.send(data)
         }
@@ -56,12 +56,12 @@ router.post('/peliculas/obtener_datos', (req, res) =>{
     })
 })
 
-//Editar Pelicula
-router.put('/peliculas/:id', (req, res) =>{
+//Editar portada
+router.put('/portada/:id', (req, res) =>{
     const {id} = req.params;
-    const {nombre, tarifa, hora_inicio, idioma, tipo, categoria, restriccion, imagen, trailer, sinopsis, portada} = req.body;
-    peliculaSchema
-    .updateOne({_id: id}, {$set: {nombre, tarifa, hora_inicio, idioma, tipo, categoria, restriccion, imagen, trailer, sinopsis, portada}})
+    const {descripcion, precio, imagen} = req.body;
+    portadaSchema
+    .updateOne({_id: id}, {$set: {descripcion, precio, imagen}})
     .then((data) =>{
         res.json(data)
     })
@@ -70,10 +70,10 @@ router.put('/peliculas/:id', (req, res) =>{
     });
 });
 
-//Eliminar Pelicula
-router.delete('/peliculas/:id', (req, res) =>{
+//Eliminar portada
+router.delete('/portada/:id', (req, res) =>{
     const {id} = req.params;
-    peliculaSchema
+    portadaSchema
     .remove({_id: id})
     .then((data) =>{
         res.json(data)
@@ -82,4 +82,5 @@ router.delete('/peliculas/:id', (req, res) =>{
         res.json({message: error})
     });
 });
+
 module.exports = router;

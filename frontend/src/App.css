@@ -16,11 +16,12 @@ body{
   width: 100%;
   min-height: 100vh;
   min-width: 320px;
-  background-image: url(https://i.postimg.cc/VNNNBkdS/pexels-cottonbro-4722577.jpg);
+  background-image: url(https://i.postimg.cc/TYv5ZLkr/background.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size:cover;
   position: relative;
+  padding: 0px;
 }
 
 header{
@@ -40,6 +41,7 @@ header img{
 nav{
   background-color: black;
   display: flex;
+  flex-wrap: wrap;
 }
 form{
   display: flex;
