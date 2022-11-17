@@ -150,6 +150,11 @@ const Nuevo = () => {
               Crear
             </button>
           </Link>
+          <Link to="/inventario">
+            <button>
+              Volver
+            </button>
+          </Link>
         </div>
       </article>
     </main>

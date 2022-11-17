@@ -103,11 +103,14 @@ const InventarioPage = () => {
           })}
         </table>
       </article>
+      <Link className="link" to="/">
+        <button>Volver</button>
+      </Link>
       <Link className="link" to="/nueva_pelicula">
         <button>Nuevo</button>
       </Link>
-      <Link className="link" to="/">
-        <button>Volver</button>
+      <Link className="link" to="/inventarioPortada">
+        <button>Portadas</button>
       </Link>
     </main>
   );

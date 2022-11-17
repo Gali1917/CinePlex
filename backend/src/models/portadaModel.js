@@ -7,7 +7,7 @@ const portadaSchema = mongoose.Schema({
     },
     precio:{
         type: Number,
-        required: false
+        required: true
     },
     imagen:{
         type: String,

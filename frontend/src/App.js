@@ -8,6 +8,9 @@ import Nuevo from "./pages/InventarioPage/nuevo";
 import { Routes, Route, Link } from "react-router-dom";
 import LoginPage from "./pages/LoginPage/loginPage";
 import PopularDetalle from "./pages/PeliculaDetalle/popularesDetalle";
+import InventarioPortada from "./pages/inventarioPortada/inventarioPage";
+import NuevaPortada from "./pages/inventarioPortada/nuevaPortada";
+import EditarPortada from "./pages/inventarioPortada/editarPortada";
 
 
 function App() {
@@ -38,11 +41,14 @@ function App() {
           <Route path="/" element={<IndexPage />} />
           <Route path="/populares" element={<Populares />} />
           <Route path="/inventario" element={<InventarioPage />} />
+          <Route path="/inventarioPortada" element={<InventarioPortada />} />
           <Route path="/detalle/:pelicula_id" element={<PeliculaDetalle />} />
           <Route path="/popular_detalle/:pelicula_id" element={<PopularDetalle />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/editar/:pelicula_id" element={<Editar />} />
           <Route path="/nueva_pelicula" element={<Nuevo />} />
+          <Route path="/editar_portada/:portada_id" element={<EditarPortada />} />
+          <Route path="/nueva_portada" element={<NuevaPortada />} />
         </Routes>
       </main>
       <footer>
